@@ -11,7 +11,7 @@
 
 // The Hup host: the embed loads the SDK from it, the admin page reads the leaderboard from it.
 // Production: https://hup.social — the local dev server is HTTPS-only (self-signed cert).
-const HUP_ORIGIN = "https://hup.social";
+const HUP_ORIGIN = "https://www.hup.social";
 
 // One entry per chain HupGift is deployed on. Everything campaign-specific lives in the round
 // onchain, so adding a chain is one entry here and nothing else.
