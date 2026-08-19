@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Hup Gift — rounds</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <h1 class="bar__title">Hup Gift <span class="bar__sub">rounds</span></h1>
+      <div class="bar__right">
+        <select id="chain" class="bar__chain" aria-label="Network"></select>
+        <button id="connect" class="btn btn--primary" type="button">Connect wallet</button>
+      </div>
+    </header>
+
+    <p id="banner" class="banner" hidden></p>
+
+    <main class="wrap">
+      <!-- Create -->
+      <section class="panel">
+        <h2 class="panel__title">New round</h2>
+
+        <div class="grid">
+          <label class="field">
+            <span class="field__label">Payout per claim</span>
+            <input id="amount" class="field__input" type="text" inputmode="decimal" placeholder="10" />
+            <small class="field__hint" id="amount-hint">What each eligible account can claim.</small>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Pool to deposit now</span>
+            <input id="funding" class="field__input" type="text" inputmode="decimal" placeholder="200" />
+            <small class="field__hint" id="funding-hint">Sent with the transaction. Top up later any time.</small>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Opens</span>
+            <input id="start" class="field__input" type="datetime-local" />
+            <small class="field__hint">Leave empty to open immediately.</small>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Closes</span>
+            <input id="end" class="field__input" type="datetime-local" />
+            <small class="field__hint">Leave empty for no deadline — then only cancelling winds it down.</small>
+          </label>
+
+          <label class="field field--wide">
+            <span class="field__label">Title</span>
+            <input id="label" class="field__input" type="text" placeholder="Top 20 — August" maxlength="80" />
+          </label>
+
+          <label class="field field--wide">
+            <span class="field__label">Thank-you message</span>
+            <input id="message" class="field__input" type="text" placeholder="Thanks for being with us." maxlength="160" />
+            <small class="field__hint">Shown under the title in the post. Editable later.</small>
+          </label>
+        </div>
+
+        <p id="create-summary" class="summary"></p>
+        <button id="create" class="btn btn--primary" type="button" disabled>Create round</button>
+      </section>
+
+      <!-- Rounds -->
+      <section class="panel">
+        <div class="panel__head">
+          <h2 class="panel__title">Rounds</h2>
+          <button id="refresh" class="btn" type="button">Refresh</button>
+        </div>
+        <div id="rounds" class="rounds"><p class="muted">Connect a wallet to load rounds.</p></div>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="abi.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
