@@ -6,6 +6,10 @@
  * in one file is the point — two copies of this would drift and only one of them would be tested.
  */
 
+// Same closure-and-export pattern as config.js, for the same extension-collision reason.
+(() => {
+
+
 // --- Words ---
 
 /** Left-pads a bigint, number, address or hex string into one 32-byte word (no 0x). */
@@ -109,3 +113,19 @@ function formatAmount(wei) {
 
   return fraction ? `${whole}.${fraction}` : whole
 }
+
+  Object.assign(globalThis, {
+    pad32,
+    wordAt,
+    toBigInt,
+    toBool,
+    toAddress,
+    decodeString,
+    decodeAddressArray,
+    structBody,
+    encodeParams,
+    encodeCall,
+    parseAmount,
+    formatAmount,
+  });
+})();

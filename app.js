@@ -9,6 +9,12 @@
  * handed over by the Hup SDK, per the mini app rules.
  */
 
+// Wrapped in an IIFE: wallet extensions inject bootstrap scripts into the page's main
+// world, and a top-level const here collides with any global they leak (seen live:
+// "Identifier 'injected' has already been declared"). Inside a closure nothing can clash.
+(() => {
+
+
 // --- Config ---
 // Deployment addresses and the Hup origin live in config.js, shared with admin.js.
 
@@ -386,3 +392,5 @@ async function main() {
 main().catch(() =>
   fail("Something went wrong. Reload the post and try again."),
 );
+
+})();

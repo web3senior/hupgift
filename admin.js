@@ -9,6 +9,12 @@
  * hand-encoding calldata in Remix, and shows what a round actually looks like before you fund it.
  */
 
+// Wrapped in an IIFE: wallet extensions inject bootstrap scripts into the page's main
+// world, and a top-level const here collides with any global they leak (seen live:
+// "Identifier 'injected' has already been declared"). Inside a closure nothing can clash.
+(() => {
+
+
 // --- Config ---
 // Deployment addresses and the Hup origin live in config.js, shared with app.js.
 
@@ -669,3 +675,5 @@ async function resume() {
 }
 
 resume();
+
+})();

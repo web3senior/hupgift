@@ -4,6 +4,11 @@
  * single edit. Loaded as a plain script before the page scripts — no build step, no imports.
  */
 
+// Declared inside a closure and exported by assignment so no extension-injected global
+// can collide with the declarations (assignment never throws; a bare top-level const does).
+(() => {
+
+
 // The Hup host: the embed loads the SDK from it, the admin page reads the leaderboard from it.
 // Production: https://hup.social — the local dev server is HTTPS-only (self-signed cert).
 const HUP_ORIGIN = "https://localhost:3000";
@@ -27,3 +32,6 @@ const DEPLOYMENTS = {
 
 // Fallback chain when the host context does not name one
 const PRIMARY_CHAIN_ID = 4201;
+
+  Object.assign(globalThis, { HUP_ORIGIN, DEPLOYMENTS, PRIMARY_CHAIN_ID });
+})();
