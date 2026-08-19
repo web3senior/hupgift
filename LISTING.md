@@ -33,3 +33,22 @@ Ready-to-paste values for the "List your app" form on https://hup.social/apps.
 3. Attach the app to a post.
 
 The local Dracos listing on 4201 stays as the dev loop — it is DB-only and unrelated to this.
+
+## Round copy (paste into admin.html when creating the mainnet round)
+
+**Title** (≤80 chars):
+
+> Top 20 — August
+
+**Thank-you message** (≤160 chars):
+
+> You're one of the 20 people who made Hup feel alive this month. This one's on us — thank you for being with us. 🎁
+
+Alternates, same limit:
+
+> The feed is only as good as the people on it, and this month that was you. Claim your LYX with our thanks.
+
+> Top of the leaderboard, top of our list. A small gift in LYX, from Hup with thanks.
+
+The title and message are editable after creation (Save text in the round's Manage drawer), so a
+typo never needs a new round — but the payout amount freezes at the first claim.
